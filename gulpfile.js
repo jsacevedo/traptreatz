@@ -5,7 +5,7 @@ const browserSync = require('browser-sync').create()
 const sass = require('gulp-sass')
 
 gulp.task('sass', function() {
-  return gulp.src(settings.themeLocation + 'scss/style.scss')
+  return gulp.src(settings.themeLocation + 'scss/*.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest(settings.themeLocation))

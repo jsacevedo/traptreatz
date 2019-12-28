@@ -1,0 +1,48 @@
+.our-story {
+  background-color: $violet-red;
+}
+
+.our-story-container {
+  max-width: $max-width;
+  margin: $center;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: auto auto;
+}
+
+.our-story-title {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  min-width: 18.75rem;
+  width: 90%;
+  max-width: 37.5rem;
+  justify-self: center;
+  margin: 1rem 0;
+}
+
+.our-story-text {
+  color: $white;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  p {
+    max-width: 90%;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

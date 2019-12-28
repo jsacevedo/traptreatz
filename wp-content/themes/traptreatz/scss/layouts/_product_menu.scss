@@ -1,0 +1,27 @@
+.menu-title-container {
+  background-color: $mine-shaft;
+
+  & > h2 {
+    color: $violet-red;
+    margin: $center;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  & > p {
+    color: $white;
+    margin: $center;
+    padding-bottom: 1rem;
+    text-align: center;
+    width: 75%;
+  }
+}
+
+.sweet-menu-title {
+  display: block;
+  min-width: 18.75rem;
+  width: 90%;
+  max-width: 37.5rem;
+  margin: $center;
+  transform: translateY(-4rem);
+}

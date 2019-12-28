@@ -1,4 +1,4 @@
-exports.themeLocation = './wp-content/themes/trap-treatz/';
+exports.themeLocation = './wp-content/themes/traptreatz/';
 exports.urlToPreview = 'localhost/trap-treatz/';
 
 // If you're using Local by Flywheel you will

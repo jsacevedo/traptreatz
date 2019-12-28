@@ -1,0 +1,64 @@
+/* Import custom font files*/
+@font-face {
+  font-family: 'Chalkboard SE';
+  src: url(http://localhost:3000/trap-treatz/wp-content/themes/traptreatz/scss/fonts/copyfonts.com_chalkboard-se-regular.ttf);
+}
+
+@font-face {
+  font-family: 'Philly Sans';
+  src: url(http://localhost:3000/trap-treatz/wp-content/themes/traptreatz/scss/fonts/PhillySans.otf);
+}
+
+// Font Declarations
+#menu-header-navigation, #menu-header-navigation-1 > li a {
+  font-family: 'Chalkboard SE', sans-serif;
+}
+
+.landing-banner h1 {
+  font-family: 'Philly Sans', serif;
+}
+
+.landing-button {
+  font-family: 'Chalkboard SE', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.our-story-text {
+  font-family: 'Chalkboard SE', sans-serif;
+}
+
+.menu-title-container > h2 {
+  font-family: 'Philly Sans', serif;
+}
+
+.menu-title-container > p {
+  font-family: 'Chalkboard SE', serif;
+}
+
+// Font Sizes
+#menu-header-navigation > li a {
+  font-size: 1rem;
+}
+
+#menu-header-navigation-1 > li a {
+  font-size: 1.5rem;
+}
+
+.landing-banner h1 {
+  font-size: 2.5rem;
+}
+
+.landing-button {
+  font-size: 1.25rem;
+}
+
+.our-story-text {
+  p {
+    font-size: 1rem;
+  }
+}
+
+.menu-title-container > h2 {
+  font-size: 3rem;
+}

@@ -1,0 +1,28 @@
+.landing-banner {
+  height: calc(100vh - 5.5rem);
+  background-color: $lima;
+  @include border('bottom', 0.250rem, solid, $dodger-blue);
+}
+
+.landing-banner-container {
+  max-width: $max-width;
+  max-height: $max-height;
+  margin: $center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h1 {
+    text-align: center;
+    margin: 0;
+    color: $violet-red;
+  }
+
+  .landing-button {
+    background-color: $yellow;
+    color: $violet-red;
+    margin-top: 2rem;
+  }
+}
