@@ -340,37 +340,30 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
   font-family: 'Philly Sans';
   src: url(http://localhost:3000/trap-treatz/wp-content/themes/traptreatz/scss/fonts/PhillySans.otf); }
 
-#menu-header-navigation, #menu-header-navigation-1 > li a {
+body {
   font-family: 'Chalkboard SE', sans-serif; }
 
 .landing-banner h1 {
   font-family: 'Philly Sans', serif; }
 
 .landing-button {
-  font-family: 'Chalkboard SE', sans-serif;
   text-transform: uppercase;
   font-weight: bold; }
-
-.our-story-text {
-  font-family: 'Chalkboard SE', sans-serif; }
 
 .menu-title-container > h2 {
   font-family: 'Philly Sans', serif; }
 
-.menu-title-container > p {
-  font-family: 'Chalkboard SE', sans-serif; }
-
 .add-to-cart, .item-title {
   font-family: 'Philly Sans', serif; }
-
-.item-price, .item-information > p {
-  font-family: 'Chalkboard SE', sans-serif; }
 
 .contact-form div > label {
   font-family: 'Philly Sans', serif; }
 
-.contact-form div > input[type="text"], .contact-form div input[type="tel"], .contact-form div input[type="email"], .contact-form div textarea {
-  font-family: 'Chalkboard SE', sans-serif; }
+.woocommerce ul.products li.product a h2.woocommerce-loop-product__title {
+  font-family: 'Philly Sans', serif; }
+
+.woocommerce ul.products li.product a.add_to_cart_button {
+  font-family: 'Philly Sans', serif; }
 
 #menu-header-navigation > li a {
   font-size: 1rem; }
@@ -404,6 +397,17 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
 
 .contact-form div > input[type="text"], .contact-form div input[type="tel"], .contact-form div input[type="email"], .contact-form div textarea {
   font-size: 1rem; }
+
+.woocommerce ul.products li.product a h2.woocommerce-loop-product__title {
+  font-size: 2rem;
+  letter-spacing: 0.1rem; }
+
+.woocommerce ul.products li.product a span.price {
+  font-size: 1.25rem; }
+
+.woocommerce ul.products li.product a.add_to_cart_button {
+  font-size: 1.75rem;
+  letter-spacing: 0.1rem; }
 
 /*
 This file is used to contain all base imports.
@@ -712,10 +716,10 @@ Files inside this folder can contain specific element styles and layout.
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: column nowrap;
-  -moz-flex-flow: column nowrap;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
+  -webkit-flex-flow: column wrap;
+  -moz-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
   -webkit-align-items: center;
   -moz-align-items: center;
   -ms-align-items: center;
@@ -725,6 +729,10 @@ Files inside this folder can contain specific element styles and layout.
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; }
+  .product-menu .sweet-items-container, .product-menu .savory-items-container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto; }
 
 .menu-title-container {
   background-color: #3c3c3c;
@@ -742,24 +750,6 @@ Files inside this folder can contain specific element styles and layout.
     width: calc(100% - 2rem);
     max-width: 30rem; }
 
-.sweet-items-list, .savory-items-list {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -moz-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center;
-  max-width: 1920px;
-  width: 100%; }
-
 .sweet-menu-title {
   display: block;
   min-width: 12rem;
@@ -774,108 +764,107 @@ Files inside this folder can contain specific element styles and layout.
   max-width: 18.75rem;
   margin: 2rem auto; }
 
-.sweet-menu-item, .savory-menu-item {
+.woocommerce ul.products {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: column nowrap;
-  -moz-flex-flow: column nowrap;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-align-items: center;
   -moz-align-items: center;
   -ms-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%;
-  max-width: 14rem;
-  margin: 0 1.5rem 3rem; }
-
-.item-image-container {
-  background-color: white;
-  width: 100%;
-  height: auto; }
-
-.item-image-container img {
-  width: calc( 100% - 3.5rem);
-  height: auto;
-  margin: 2rem 1rem;
-  padding: 0;
-  border: 0.75rem solid #ed379b;
-  border-radius: 50%;
-  box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2); }
-
-.sweet-menu-item .item-image-container {
-  border-bottom: 0.25rem solid #3ee524; }
-
-.savory-menu-item .item-image-container {
-  border-bottom: 0.25rem solid #ed379b; }
-
-.item-information {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: column nowrap;
-  -moz-flex-flow: column nowrap;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
   -webkit-justify-content: center;
   -moz-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  padding: 1rem; }
-  .item-information .item-title {
-    letter-spacing: 0.125rem;
-    margin: 0; }
-  .item-information .item-price {
-    margin: 1.5rem 0; }
-  .item-information .item-information > p {
-    margin: 0 0 2rem 0; }
-  .item-information > h3, .item-information h4, .item-information p {
-    text-align: center;
-    color: white; }
-  .item-information .add-to-cart {
-    text-transform: uppercase;
-    width: 100%; }
-    .item-information .add-to-cart:hover {
-      transition: 0.3s; }
-
-.sweet-menu-item .item-information {
-  background-color: #ed379b; }
-  .sweet-menu-item .item-information .add-to-cart {
-    background-color: #f8ff00;
-    color: #0abafe; }
-    .sweet-menu-item .item-information .add-to-cart:hover {
-      background-color: #0abafe;
-      color: #f8ff00; }
-
-.savory-menu-item .item-information {
-  background-color: #0abafe; }
-  .savory-menu-item .item-information .add-to-cart {
-    background-color: #f8ff00;
-    color: #ed379b; }
-    .savory-menu-item .item-information .add-to-cart:hover {
-      background-color: #ed379b;
-      color: #f8ff00; }
-
-@media only screen and (min-width: 820px) {
-  .sweet-items-list {
-    display: -ms-grid;
-    display: grid;
-    grid-template-columns: 14rem 14rem;
-    grid-gap: 3rem;
-    justify-items: center; }
-  .sweet-menu-item {
-    margin: 0; } }
-
-@media only screen and (min-width: 1100px) {
-  .sweet-items-list {
-    grid-template-columns: 14rem 14rem 14rem 14rem; } }
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .woocommerce ul.products li.product {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    -moz-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background-color: #ed379b;
+    width: 100%;
+    max-width: 15.625rem;
+    margin: 1rem; }
+    .woocommerce ul.products li.product .woocommerce-loop-product__link {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: column nowrap;
+      -moz-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      background-color: white;
+      width: 100%; }
+      .woocommerce ul.products li.product .woocommerce-loop-product__link img {
+        border: 0.75rem solid #ed379b;
+        border-radius: 50%;
+        box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+        width: 12rem;
+        height: 12rem;
+        margin: 1.5rem 0; }
+      .woocommerce ul.products li.product .woocommerce-loop-product__link .woocommerce-loop-product__title {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #ed379b;
+        margin: 0;
+        padding-top: 1.25rem;
+        border-top: 0.5rem solid #3ee524;
+        text-shadow: 0.1rem 0.175rem 0.175rem rgba(0, 0, 0, 0.2); }
+      .woocommerce ul.products li.product .woocommerce-loop-product__link .price {
+        width: 100%;
+        margin: 0;
+        padding-top: 1rem;
+        text-align: center;
+        background-color: #ed379b;
+        text-shadow: 0.1rem 0.175rem 0.175rem rgba(0, 0, 0, 0.2); }
+    .woocommerce ul.products li.product .add_to_cart_button {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      padding: 0.25rem 2rem;
+      background-color: #f8ff00;
+      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+      border-radius: 2rem;
+      text-decoration: none;
+      color: #0abafe;
+      text-shadow: 0.1rem 0.1rem 0.175rem rgba(0, 0, 0, 0.2);
+      transition: all 0.5s; }
+      .woocommerce ul.products li.product .add_to_cart_button:hover {
+        background-color: #0abafe;
+        color: #f8ff00; }
 
 .contact-form {
   max-width: 1920px;
@@ -970,7 +959,7 @@ Files inside this folder should contain all styles relating to a reusable compon
 img.logo {
   margin: 0 auto;
   width: 100%;
-  max-width: 10rem;
+  max-width: 15rem;
   height: auto;
   align-self: start; }
 
@@ -982,7 +971,6 @@ img.header-icon {
 
 #user-icon, #bag-icon, #search-icon {
   margin: 1.5rem 0 0 0;
-  padding: 0 1rem;
   position: relative; }
   #user-icon:hover:after, #bag-icon:hover:after, #search-icon:hover:after {
     content: "";
@@ -1003,11 +991,14 @@ img.header-icon {
     width: 17rem;
     order: 1; }
   #user-icon {
-    order: 3; }
+    order: 3;
+    padding: 0 1rem; }
   #search-icon {
-    order: 4; }
+    order: 4;
+    padding: 0 1rem; }
   #bag-icon {
-    order: 5; } }
+    order: 5;
+    padding: 0 1rem; } }
 
 button {
   border: none;

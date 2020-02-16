@@ -1,11 +1,17 @@
 .product-menu {
   @include flexbox();
-  @include flex-flow(column, nowrap);
+  @include flex-flow(column, wrap);
   @include align-items(center);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  .sweet-items-container, .savory-items-container {
+    width: 100%;
+    max-width: 1920px;
+    margin: $center;
+  }
 }
 
 .menu-title-container {
@@ -29,14 +35,6 @@
   }
 }
 
-.sweet-items-list, .savory-items-list {
-  @include flexbox();
-  @include flex-flow(row, wrap);
-  @include justify-content(center);
-  max-width: $max-width;
-  width: 100%;
-}
-
 .sweet-menu-title {
   display: block;
   min-width: 12rem;
@@ -53,126 +51,80 @@
   margin: 2rem auto;
 }
 
-.sweet-menu-item, .savory-menu-item {
+.woocommerce ul.products {
   @include flexbox();
-  @include flex-flow(column, nowrap);
+  @include flex-flow(row, wrap);
   @include align-items(center);
-  width: 100%;
-  max-width: 14rem;
-  margin: 0 1.5rem 3rem;
-}
-
-.item-image-container {
-  background-color: $white;
-  width: 100%;
-  height: auto;
-}
-
-.item-image-container {
-  img {
-    width: calc( 100% - 3.5rem );
-    height: auto;
-    margin: 2rem 1rem;
-    padding: 0;
-    @include border-default(0.750rem, solid, $violet-red);
-    border-radius: 50%;
-    box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
-  }
-}
-
-.sweet-menu-item {
-  .item-image-container {
-    @include border('bottom', 0.250rem, solid, $lima);
-  }
-}
-
-.savory-menu-item {
-  .item-image-container {
-    @include border('bottom', 0.250rem, solid, $violet-red);
-  }
-}
-
-.item-information {
-  @include flexbox();
-  @include flex-flow(column, nowrap);
   @include justify-content(center);
-  padding: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 
-  .item-title {
-    letter-spacing: 0.125rem;
-    margin: 0;
-  }
-
-  .item-price {
-    margin: 1.5rem 0;
-  }
-
-  .item-information > p {
-    margin: 0 0 2rem 0;
-  }
-
-  & > h3, h4, p {
-    text-align: center;
-    color: $white;
-  }
-
-  .add-to-cart {
-    text-transform: uppercase;
-    width: 100%;
-
-    &:hover {
-      transition: 0.3s;
-    }
-  }
-}
-
-.sweet-menu-item {
-  .item-information {
+  li.product {
+    @include flexbox();
+    @include flex-flow(column, nowrap);
+    @include align-items(center);
+    @include flex-child(0, 0, auto);
     background-color: $violet-red;
-  
-    .add-to-cart {
+    width: 100%;
+    max-width: 15.625rem;
+    margin: 1rem;
+
+    .woocommerce-loop-product__link {
+      @include flexbox();
+      @include flex-flow(column, nowrap);
+      @include align-items(center);
+      text-decoration: none;
+      color: $white;
+      background-color: $white;
+      width: 100%;
+
+      img {
+        @include border-default(0.750rem, solid, $violet-red);
+        border-radius: 50%;
+        box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.2);
+        width: 12rem;
+        height: 12rem;
+        margin: 1.5rem 0;
+      }
+
+      .woocommerce-loop-product__title {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: $violet-red;
+        margin: 0;
+        padding-top: 1.25rem;
+        @include border(top, 0.5rem, solid, $lima);
+        text-shadow: 0.1rem 0.175rem 0.175rem rgba(0,0,0,0.2);
+      }
+
+      .price {
+        width: 100%;
+        margin: 0;
+        padding-top: 1rem;
+        text-align: center;
+        background-color: $violet-red;
+        text-shadow: 0.1rem 0.175rem 0.175rem rgba(0,0,0,0.2);
+      }
+    }
+
+    .add_to_cart_button {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      padding: 0.25rem 2rem;
       background-color: $yellow;
+      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.2);
+      border-radius: 2rem;
+      text-decoration: none;
       color: $dodger-blue;
-  
+      text-shadow: 0.1rem 0.1rem 0.175rem rgba(0,0,0,0.2);
+      transition: all 0.5s;
+
       &:hover {
         background-color: $dodger-blue;
         color: $yellow;
       }
     }
-  }
-}
-
-.savory-menu-item {
-  .item-information {
-    background-color: $dodger-blue;
-  
-    .add-to-cart {
-      background-color: $yellow;
-      color: $violet-red;
-  
-      &:hover {
-        background-color: $violet-red;
-        color: $yellow;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: $main-page-menu-breakpoint-tablet) {
-  .sweet-items-list {
-    @include display-grid();
-    grid-template-columns: 14rem 14rem;
-    grid-gap: 3rem;
-    justify-items: center;
-  }
-
-  .sweet-menu-item {
-    margin: 0;
-  }
-}
-
-@media only screen and (min-width: $main-page-menu-breakpoint-desktop) {
-  .sweet-items-list {
-    grid-template-columns: 14rem 14rem 14rem 14rem;
   }
 }

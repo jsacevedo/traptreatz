@@ -9,39 +9,27 @@
   src: url(http://localhost:3000/trap-treatz/wp-content/themes/traptreatz/scss/fonts/PhillySans.otf);
 }
 
-// Font Declarations
-#menu-header-navigation, #menu-header-navigation-1 > li a {
+// Globally set font to 'Chalkboard SE'
+body {
   font-family: 'Chalkboard SE', sans-serif;
 }
 
+// Font Declarations
 .landing-banner h1 {
   font-family: 'Philly Sans', serif;
 }
 
 .landing-button {
-  font-family: 'Chalkboard SE', sans-serif;
   text-transform: uppercase;
   font-weight: bold;
-}
-
-.our-story-text {
-  font-family: 'Chalkboard SE', sans-serif;
 }
 
 .menu-title-container > h2 {
   font-family: 'Philly Sans', serif;
 }
 
-.menu-title-container > p {
-  font-family: 'Chalkboard SE', sans-serif;
-}
-
 .add-to-cart, .item-title {
   font-family: 'Philly Sans', serif;
-}
-
-.item-price, .item-information > p {
-  font-family: 'Chalkboard SE', sans-serif;
 }
 
 .contact-form {
@@ -52,12 +40,12 @@
   }
 }
 
-.contact-form {
-  div {
-    & > input[type="text"], input[type="tel"], input[type="email"], textarea {
-      font-family: 'Chalkboard SE', sans-serif;
-    }
-  }
+.woocommerce ul.products li.product a h2.woocommerce-loop-product__title {
+  font-family: 'Philly Sans', serif;
+}
+
+.woocommerce ul.products li.product a.add_to_cart_button {
+  font-family: 'Philly Sans', serif;
 }
 
 // Font Sizes
@@ -113,4 +101,18 @@
       font-size: 1rem;
     }
   }
+}
+
+.woocommerce ul.products li.product a h2.woocommerce-loop-product__title {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.woocommerce ul.products li.product a span.price {
+  font-size: 1.25rem;
+}
+
+.woocommerce ul.products li.product a.add_to_cart_button {
+  font-size: 1.75rem;
+  letter-spacing: 0.1rem;
 }

@@ -2,7 +2,7 @@
 img.logo {
   margin: $center;
   width: 100%;
-  max-width: 10rem;
+  max-width: 15rem;
   height: auto;
   align-self: start;
 }
@@ -18,7 +18,6 @@ img.header-icon {
 
 #user-icon, #bag-icon, #search-icon {
   margin: 1.5rem 0 0 0;
-  padding: 0 1rem;
   position: relative;
 
   &:hover {
@@ -47,13 +46,16 @@ img.header-icon {
 
   #user-icon {
     order: 3;
+    padding: 0 1rem;
   }
 
   #search-icon {
     order: 4;
+    padding: 0 1rem;
   }
 
   #bag-icon {
     order: 5;
+    padding: 0 1rem;
   }
 }

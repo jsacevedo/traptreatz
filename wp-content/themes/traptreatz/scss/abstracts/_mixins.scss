@@ -49,3 +49,9 @@
        -ms-flex-align: $align;
           align-items: $align;
 }
+
+@mixin flex-child($grow, $shrink, $basis) {
+  -webkit-box-flex: $grow;
+          -ms-flex: $grow $shrink $basis;
+              flex: $grow $shrink $basis;
+}
