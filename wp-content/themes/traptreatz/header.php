@@ -27,7 +27,7 @@
             ));
           ?>
         </nav>
-        <a id="user-icon" href="#"><img class="header-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/man-user.png"></a>
+        <a id="user-icon" href="<?php echo site_url('/my-account'); ?>"><img class="header-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/man-user.png"></a>
         <a id="bag-icon" href="#"><img class="header-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-bag.png"></a>
         
         <!-- Responsive side navigation menu -->

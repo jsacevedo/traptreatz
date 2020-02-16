@@ -1,13 +1,14 @@
 // Header logo styles
-.logo {
+img.logo {
   margin: $center;
-  height: 10rem;
-  width: 10rem;
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
   align-self: start;
 }
 
 // Header icon Styles
-.header-icon {
+img.header-icon {
   height: 2rem;
 }
 
@@ -29,7 +30,6 @@
       width: 0;
       left: 50%;
       margin-left: -1rem;
-      bottom: -1.5rem;
       @include border('left', 1rem, solid, transparent);
       @include border('right', 1rem, solid, transparent);
       @include border('bottom', 1rem, solid, $violet-red);
@@ -38,9 +38,9 @@
 }
 
 @media only screen and (min-width: $header-breakpoint) {
-  .logo {
+  img.logo {
     margin: 0;
-    height: 17rem;
+    height: auto;
     width: 17rem;
     order: 1;
   }

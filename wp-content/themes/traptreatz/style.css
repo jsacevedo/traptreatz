@@ -16,6 +16,9 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
+* {
+  box-sizing: border-box; }
+
 /* Sections
    ========================================================================== */
 /**
@@ -355,7 +358,19 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
   font-family: 'Philly Sans', serif; }
 
 .menu-title-container > p {
-  font-family: 'Chalkboard SE', serif; }
+  font-family: 'Chalkboard SE', sans-serif; }
+
+.add-to-cart, .item-title {
+  font-family: 'Philly Sans', serif; }
+
+.item-price, .item-information > p {
+  font-family: 'Chalkboard SE', sans-serif; }
+
+.contact-form div > label {
+  font-family: 'Philly Sans', serif; }
+
+.contact-form div > input[type="text"], .contact-form div input[type="tel"], .contact-form div input[type="email"], .contact-form div textarea {
+  font-family: 'Chalkboard SE', sans-serif; }
 
 #menu-header-navigation > li a {
   font-size: 1rem; }
@@ -375,6 +390,21 @@ Files inside this folder can contain abstract settings, helpers or functions. Th
 .menu-title-container > h2 {
   font-size: 3rem; }
 
+.item-title, .add-to-cart {
+  font-size: 1.5rem; }
+
+.item-price {
+  font-size: 1.25rem; }
+
+.item-description {
+  font-size: 1rem; }
+
+.contact-form div > label {
+  font-size: 1.25rem; }
+
+.contact-form div > input[type="text"], .contact-form div input[type="tel"], .contact-form div input[type="email"], .contact-form div textarea {
+  font-size: 1rem; }
+
 /*
 This file is used to contain all base imports.
 Files inside this folder can contain global styles used in the project.
@@ -390,9 +420,10 @@ Files inside this folder can contain specific element styles and layout.
 
 .site-header-container {
   position: relative;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 2.5rem 2.5rem 1fr 2.5rem 2.5rem;
-  grid-gap: 1rem;
+  grid-gap: 0.75rem;
   align-items: start;
   max-width: 1920px;
   margin: 0 auto;
@@ -413,9 +444,20 @@ Files inside this folder can contain specific element styles and layout.
 
 .side-nav {
   position: fixed;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
   justify-content: flex-start;
+  -ms-flex-pack: flex-start;
   top: 0;
   left: 0;
   z-index: 1;
@@ -438,12 +480,30 @@ Files inside this folder can contain specific element styles and layout.
     list-style-type: none;
     margin: 0;
     padding: 0 1rem 0 1rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-flow: column nowrap;
+    -moz-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
     flex-flow: column nowrap; }
     .side-nav #menu-header-navigation-1 > li {
       height: 3.5rem;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-align-items: stretch;
+      -moz-align-items: stretch;
+      -ms-align-items: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch;
+      -webkit-align-content: center;
+      -moz-align-content: center;
+      -ms-align-content: center;
       align-content: center;
       margin-bottom: 0.5rem;
       padding-bottom: 0.5rem;
@@ -452,7 +512,15 @@ Files inside this folder can contain specific element styles and layout.
         color: white;
         text-decoration: none;
         text-transform: uppercase;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
         padding: 0 1rem;
         transition: 0.3s;
@@ -466,8 +534,16 @@ Files inside this folder can contain specific element styles and layout.
 
 @media only screen and (min-width: 1125px) {
   .site-header-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: center; }
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
     .site-header-container .navbar-open {
       display: none; }
     .site-header-container .side-nav {
@@ -479,12 +555,35 @@ Files inside this folder can contain specific element styles and layout.
       list-style-type: none;
       margin: 0;
       padding: 0;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-flex-flow: row nowrap;
+      -moz-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
       flex-flow: row nowrap;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
       justify-content: space-between;
+      -ms-flex-pack: space-between;
+      -webkit-align-items: stretch;
+      -moz-align-items: stretch;
+      -ms-align-items: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch; }
       .main-header-navigation #menu-header-navigation > li {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
+        -webkit-align-items: stretch;
+        -moz-align-items: stretch;
+        -ms-align-items: stretch;
+        -ms-flex-align: stretch;
         align-items: stretch;
         height: 5rem; }
         .main-header-navigation #menu-header-navigation > li a {
@@ -492,7 +591,15 @@ Files inside this folder can contain specific element styles and layout.
           text-decoration: none;
           text-transform: uppercase;
           padding: 0 2rem 0 2rem;
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
           display: flex;
+          -webkit-align-items: center;
+          -moz-align-items: center;
+          -ms-align-items: center;
+          -ms-flex-align: center;
           align-items: center; }
           .main-header-navigation #menu-header-navigation > li a:hover {
             background-color: #3c3c3c;
@@ -505,22 +612,36 @@ Files inside this folder can contain specific element styles and layout.
 
 .landing-banner {
   height: calc(100vh - 5.5rem);
+  max-height: 1080px;
   background-color: #3ee524;
   border-bottom: 0.25rem solid #0abafe; }
 
 .landing-banner-container {
   max-width: 1920px;
-  max-height: 1080px;
+  height: 100%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
   justify-content: center;
-  height: 100%; }
-  .landing-banner-container h1 {
-    text-align: center;
-    margin: 0;
-    color: #ed379b; }
+  -ms-flex-pack: center; }
+  .landing-banner-container .landing-title {
+    width: 500px;
+    height: auto; }
   .landing-banner-container .landing-button {
     background-color: #f8ff00;
     color: #ed379b;
@@ -532,30 +653,32 @@ Files inside this folder can contain specific element styles and layout.
 .our-story-container {
   max-width: 1920px;
   margin: 0 auto;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-rows: auto auto; }
+  grid-template-columns: 1fr; }
 
 .our-story-title {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  min-width: 18.75rem;
-  width: 90%;
-  max-width: 37.5rem;
+  width: 100%;
+  max-width: 25rem;
   justify-self: center;
   margin: 1rem 0; }
 
 .our-story-text {
   color: white;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
   align-self: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1.5rem; }
   .our-story-text p {
@@ -565,8 +688,47 @@ Files inside this folder can contain specific element styles and layout.
     .our-story-text p:last-child {
       margin-bottom: 0; }
 
+@media only screen and (min-width: 800px) {
+  .our-story-container {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto auto; }
+  .our-story-title {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    min-width: 18.75rem;
+    width: 90%;
+    max-width: 25rem; }
+  .our-story-text {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3; } }
+
+.product-menu {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
 .menu-title-container {
-  background-color: #3c3c3c; }
+  background-color: #3c3c3c;
+  width: 100%; }
   .menu-title-container > h2 {
     color: #ed379b;
     margin: 0 auto;
@@ -575,29 +737,244 @@ Files inside this folder can contain specific element styles and layout.
   .menu-title-container > p {
     color: white;
     margin: 0 auto;
-    padding-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
     text-align: center;
-    width: 75%; }
+    width: calc(100% - 2rem);
+    max-width: 30rem; }
+
+.sweet-items-list, .savory-items-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  max-width: 1920px;
+  width: 100%; }
 
 .sweet-menu-title {
   display: block;
-  min-width: 18.75rem;
+  min-width: 12rem;
   width: 90%;
-  max-width: 37.5rem;
+  max-width: 18.75rem;
+  margin: 0 auto; }
+
+.savory-menu-title {
+  display: block;
+  min-width: 12rem;
+  width: 90%;
+  max-width: 18.75rem;
+  margin: 2rem auto; }
+
+.sweet-menu-item, .savory-menu-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 14rem;
+  margin: 0 1.5rem 3rem; }
+
+.item-image-container {
+  background-color: white;
+  width: 100%;
+  height: auto; }
+
+.item-image-container img {
+  width: calc( 100% - 3.5rem);
+  height: auto;
+  margin: 2rem 1rem;
+  padding: 0;
+  border: 0.75rem solid #ed379b;
+  border-radius: 50%;
+  box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2); }
+
+.sweet-menu-item .item-image-container {
+  border-bottom: 0.25rem solid #3ee524; }
+
+.savory-menu-item .item-image-container {
+  border-bottom: 0.25rem solid #ed379b; }
+
+.item-information {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  padding: 1rem; }
+  .item-information .item-title {
+    letter-spacing: 0.125rem;
+    margin: 0; }
+  .item-information .item-price {
+    margin: 1.5rem 0; }
+  .item-information .item-information > p {
+    margin: 0 0 2rem 0; }
+  .item-information > h3, .item-information h4, .item-information p {
+    text-align: center;
+    color: white; }
+  .item-information .add-to-cart {
+    text-transform: uppercase;
+    width: 100%; }
+    .item-information .add-to-cart:hover {
+      transition: 0.3s; }
+
+.sweet-menu-item .item-information {
+  background-color: #ed379b; }
+  .sweet-menu-item .item-information .add-to-cart {
+    background-color: #f8ff00;
+    color: #0abafe; }
+    .sweet-menu-item .item-information .add-to-cart:hover {
+      background-color: #0abafe;
+      color: #f8ff00; }
+
+.savory-menu-item .item-information {
+  background-color: #0abafe; }
+  .savory-menu-item .item-information .add-to-cart {
+    background-color: #f8ff00;
+    color: #ed379b; }
+    .savory-menu-item .item-information .add-to-cart:hover {
+      background-color: #ed379b;
+      color: #f8ff00; }
+
+@media only screen and (min-width: 820px) {
+  .sweet-items-list {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 14rem 14rem;
+    grid-gap: 3rem;
+    justify-items: center; }
+  .sweet-menu-item {
+    margin: 0; } }
+
+@media only screen and (min-width: 1100px) {
+  .sweet-items-list {
+    grid-template-columns: 14rem 14rem 14rem 14rem; } }
+
+.contact-form {
+  max-width: 1920px;
   margin: 0 auto;
-  transform: translateY(-4rem); }
+  background-position: bottom, center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll, fixed; }
+  .contact-form form {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    -moz-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .contact-form div {
+    width: 100%; }
+    .contact-form div > label {
+      display: block;
+      color: #3c3c3c;
+      text-transform: uppercase;
+      margin: 0.375rem 2rem;
+      width: calc(100% - 4rem); }
+    .contact-form div > input[type="text"], .contact-form div input[type="tel"], .contact-form div input[type="email"], .contact-form div textarea {
+      border: 0.125rem solid #0abafe;
+      line-height: 1.5rem;
+      padding: 0.375rem;
+      background-color: #3c3c3c;
+      width: calc(100% - 5rem);
+      margin: 0 2rem; }
+
+@media only screen and (min-width: 750px) {
+  .contact-form form {
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .contact-form form div {
+      width: 50%; }
+      .contact-form form div > label {
+        margin: 0.375rem 1rem;
+        width: calc(100% - 2rem); }
+      .contact-form form div > input[type="text"], .contact-form form div input[type="tel"], .contact-form form div input[type="email"], .contact-form form div textarea {
+        width: calc(100% - 3rem);
+        margin: 0 1rem; }
+    .contact-form form div.contact-message {
+      width: 100%; } }
+
+@media only screen and (min-width: 900px) {
+  .contact-form form {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3rem;
+    grid-template-areas: "firstname lastname" "phone email" ". message"; }
+    .contact-form form div {
+      width: 17.5rem; }
+      .contact-form form div > label {
+        margin: 0.375rem 0; }
+      .contact-form form div > input[type="text"], .contact-form form div input[type="tel"], .contact-form form div input[type="email"], .contact-form form div textarea {
+        margin: 0;
+        width: calc(100% - 1rem); }
+    .contact-form form .field-first-name {
+      grid-area: firstname; }
+    .contact-form form .field-lastname {
+      grid-area: lastname; }
+    .contact-form form .field-phone {
+      grid-area: phone; }
+    .contact-form form .field-email {
+      grid-area: email; }
+    .contact-form form .contact-message {
+      width: 100%;
+      grid-area: message; } }
 
 /*
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
 */
-.logo {
+img.logo {
   margin: 0 auto;
-  height: 10rem;
-  width: 10rem;
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
   align-self: start; }
 
-.header-icon {
+img.header-icon {
   height: 2rem; }
 
 #user-icon, #bag-icon {
@@ -615,15 +992,14 @@ Files inside this folder should contain all styles relating to a reusable compon
     width: 0;
     left: 50%;
     margin-left: -1rem;
-    bottom: -1.5rem;
     border-left: 1rem solid transparent;
     border-right: 1rem solid transparent;
     border-bottom: 1rem solid #ed379b; }
 
 @media only screen and (min-width: 1125px) {
-  .logo {
+  img.logo {
     margin: 0;
-    height: 17rem;
+    height: auto;
     width: 17rem;
     order: 1; }
   #user-icon {

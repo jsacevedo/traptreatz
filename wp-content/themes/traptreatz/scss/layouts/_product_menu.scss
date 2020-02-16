@@ -1,5 +1,16 @@
+.product-menu {
+  @include flexbox();
+  @include flex-flow(column, nowrap);
+  @include align-items(center);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .menu-title-container {
   background-color: $mine-shaft;
+  width: 100%;
 
   & > h2 {
     color: $violet-red;
@@ -11,17 +22,157 @@
   & > p {
     color: $white;
     margin: $center;
-    padding-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
     text-align: center;
-    width: 75%;
+    width: calc(100% - 2rem);
+    max-width: 30rem;
   }
+}
+
+.sweet-items-list, .savory-items-list {
+  @include flexbox();
+  @include flex-flow(row, wrap);
+  @include justify-content(center);
+  max-width: $max-width;
+  width: 100%;
 }
 
 .sweet-menu-title {
   display: block;
-  min-width: 18.75rem;
+  min-width: 12rem;
   width: 90%;
-  max-width: 37.5rem;
+  max-width: 18.75rem;
   margin: $center;
-  transform: translateY(-4rem);
+}
+
+.savory-menu-title {
+  display: block;
+  min-width: 12rem;
+  width: 90%;
+  max-width: 18.75rem;
+  margin: 2rem auto;
+}
+
+.sweet-menu-item, .savory-menu-item {
+  @include flexbox();
+  @include flex-flow(column, nowrap);
+  @include align-items(center);
+  width: 100%;
+  max-width: 14rem;
+  margin: 0 1.5rem 3rem;
+}
+
+.item-image-container {
+  background-color: $white;
+  width: 100%;
+  height: auto;
+}
+
+.item-image-container {
+  img {
+    width: calc( 100% - 3.5rem );
+    height: auto;
+    margin: 2rem 1rem;
+    padding: 0;
+    @include border-default(0.750rem, solid, $violet-red);
+    border-radius: 50%;
+    box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+.sweet-menu-item {
+  .item-image-container {
+    @include border('bottom', 0.250rem, solid, $lima);
+  }
+}
+
+.savory-menu-item {
+  .item-image-container {
+    @include border('bottom', 0.250rem, solid, $violet-red);
+  }
+}
+
+.item-information {
+  @include flexbox();
+  @include flex-flow(column, nowrap);
+  @include justify-content(center);
+  padding: 1rem;
+
+  .item-title {
+    letter-spacing: 0.125rem;
+    margin: 0;
+  }
+
+  .item-price {
+    margin: 1.5rem 0;
+  }
+
+  .item-information > p {
+    margin: 0 0 2rem 0;
+  }
+
+  & > h3, h4, p {
+    text-align: center;
+    color: $white;
+  }
+
+  .add-to-cart {
+    text-transform: uppercase;
+    width: 100%;
+
+    &:hover {
+      transition: 0.3s;
+    }
+  }
+}
+
+.sweet-menu-item {
+  .item-information {
+    background-color: $violet-red;
+  
+    .add-to-cart {
+      background-color: $yellow;
+      color: $dodger-blue;
+  
+      &:hover {
+        background-color: $dodger-blue;
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.savory-menu-item {
+  .item-information {
+    background-color: $dodger-blue;
+  
+    .add-to-cart {
+      background-color: $yellow;
+      color: $violet-red;
+  
+      &:hover {
+        background-color: $violet-red;
+        color: $yellow;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $main-page-menu-breakpoint-tablet) {
+  .sweet-items-list {
+    @include display-grid();
+    grid-template-columns: 14rem 14rem;
+    grid-gap: 3rem;
+    justify-items: center;
+  }
+
+  .sweet-menu-item {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: $main-page-menu-breakpoint-desktop) {
+  .sweet-items-list {
+    grid-template-columns: 14rem 14rem 14rem 14rem;
+  }
 }

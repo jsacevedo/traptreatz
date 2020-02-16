@@ -33,7 +33,31 @@
 }
 
 .menu-title-container > p {
-  font-family: 'Chalkboard SE', serif;
+  font-family: 'Chalkboard SE', sans-serif;
+}
+
+.add-to-cart, .item-title {
+  font-family: 'Philly Sans', serif;
+}
+
+.item-price, .item-information > p {
+  font-family: 'Chalkboard SE', sans-serif;
+}
+
+.contact-form {
+  div {
+    & > label {
+      font-family: 'Philly Sans', serif;
+    }
+  }
+}
+
+.contact-form {
+  div {
+    & > input[type="text"], input[type="tel"], input[type="email"], textarea {
+      font-family: 'Chalkboard SE', sans-serif;
+    }
+  }
 }
 
 // Font Sizes
@@ -61,4 +85,32 @@
 
 .menu-title-container > h2 {
   font-size: 3rem;
+}
+
+.item-title, .add-to-cart {
+  font-size: 1.5rem;
+}
+
+.item-price {
+  font-size: 1.25rem;
+}
+
+.item-description {
+  font-size: 1rem;
+}
+
+.contact-form {
+  div {
+    & > label {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.contact-form {
+  div {
+    & > input[type="text"], input[type="tel"], input[type="email"], textarea {
+      font-size: 1rem;
+    }
+  }
 }

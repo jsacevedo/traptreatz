@@ -6,9 +6,9 @@
 
 .site-header-container {
   position: relative;
-  display: grid;
+  @include display-grid();
   grid-template-columns: 2.5rem 2.5rem 1fr 2.5rem 2.5rem;
-  grid-gap: 1rem;
+  grid-gap: 0.75rem;
   align-items: start;
   max-width: $max-width;
   margin: $center;
@@ -36,9 +36,9 @@
 
 .side-nav {
   position: fixed;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
+  @include flexbox();
+  @include flex-flow(column, nowrap);
+  @include justify-content(flex-start);
   top: 0;
   left: 0;
   z-index: 1;
@@ -68,14 +68,14 @@
     list-style-type: none;
     margin: 0;
     padding: 0 1rem 0 1rem;
-    display: flex;
-    flex-flow: column nowrap;
+    @include flexbox();
+    @include flex-flow(column, nowrap);
 
     & > li {
       height: 3.5rem;
-      display: flex;
-      align-items: stretch;
-      align-content: center;
+      @include flexbox();
+      @include align-items(stretch);
+      @include align-content(center);
       margin-bottom: 0.5rem;
       padding-bottom: 0.5rem;
       @include border('bottom', 0.125rem, solid, $white);
@@ -84,8 +84,8 @@
         color: $white;
         text-decoration: none;
         text-transform: uppercase;
-        display: flex;
-        align-items: center;
+        @include flexbox();
+        @include align-items(center);
         padding: 0 1rem;
         transition: 0.3s;
         white-space: nowrap;
@@ -105,8 +105,8 @@
 // Media queries for desktop
 @media only screen and (min-width: $header-breakpoint) {
   .site-header-container {
-    display: flex;
-    justify-content: center;
+    @include flexbox();
+    @include justify-content(center);
     
     .navbar-open {
       display: none;
@@ -125,14 +125,14 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: stretch;
+      @include flexbox();
+      @include flex-flow(row, nowrap);
+      @include justify-content(space-between);
+      @include align-items(stretch);
 
       & > li {
-        display: flex;
-        align-items: stretch;
+        @include flexbox();
+        @include align-items(stretch);
         height: 5rem;
 
         a {
@@ -140,8 +140,8 @@
           text-decoration: none;
           text-transform: uppercase;
           padding: 0 2rem 0 2rem;
-          display: flex;
-          align-items: center;
+          @include flexbox();
+          @include align-items(center);
 
           &:hover {
             background-color: $mine-shaft;
