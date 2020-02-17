@@ -30,7 +30,7 @@
   <div class="sweet-items-container">
     <img class="sweet-menu-title" alt="Sweet" src="<?php echo get_stylesheet_directory_uri(); ?>/images/sweet_small.gif">
     <div class="sweet-items-list">
-      <?php echo do_shortcode('[products columns="1"]'); ?>
+      <?php echo do_shortcode('[products columns="1" category="Sweet"]'); ?>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
   <div class="savory-items-container">
     <img class="savory-menu-title" alt="Sweet" src="<?php echo get_stylesheet_directory_uri(); ?>/images/savory_small.gif">
     <div class="savory-items-list">
-      
+      <?php echo do_shortcode('[products columns="1" category="Savory"]'); ?>
     </div>
   </div>
 
@@ -51,7 +51,7 @@
 </section>
 
 <!-- Contact Section -->
-<section class="contact-form" style="background-image: url(<?php echo get_theme_file_uri('/images/yellow-orbs.png'); ?>), url(<?php echo get_theme_file_uri('/images/brick-wall.png'); ?>);">
+<section class="contact-form">
   <form>
     <div class="field-first-name">
       <label for="first-name">First Name</label>

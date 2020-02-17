@@ -406,7 +406,7 @@ body {
   font-size: 1.25rem; }
 
 .woocommerce ul.products li.product a.add_to_cart_button {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   letter-spacing: 0.1rem; }
 
 /*
@@ -733,6 +733,52 @@ Files inside this folder can contain specific element styles and layout.
     width: 100%;
     max-width: 1920px;
     margin: 0 auto; }
+  .product-menu .sweet-items-list .woocommerce ul.products li.product {
+    background-color: #ed379b; }
+    .product-menu .sweet-items-list .woocommerce ul.products li.product .woocommerce-loop-product__link img {
+      border: 0.75rem solid #ed379b; }
+    .product-menu .sweet-items-list .woocommerce ul.products li.product .woocommerce-loop-product__link .woocommerce-loop-product__title {
+      background-color: #ed379b;
+      border-top: 0.25rem solid #3ee524; }
+    .product-menu .sweet-items-list .woocommerce ul.products li.product .woocommerce-loop-product__link .price {
+      background-color: #ed379b; }
+  .product-menu .sweet-items-list .add_to_cart_button {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem 2rem;
+    background-color: #f8ff00;
+    box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    text-decoration: none;
+    color: #0abafe;
+    text-shadow: 0.1rem 0.1rem 0.175rem rgba(0, 0, 0, 0.2);
+    transition: all 0.5s; }
+    .product-menu .sweet-items-list .add_to_cart_button:hover {
+      background-color: #0abafe;
+      color: #f8ff00; }
+  .product-menu .savory-items-list .woocommerce ul.products li.product {
+    background-color: #0abafe; }
+    .product-menu .savory-items-list .woocommerce ul.products li.product .woocommerce-loop-product__link img {
+      border: 0.75rem solid #0abafe; }
+    .product-menu .savory-items-list .woocommerce ul.products li.product .woocommerce-loop-product__link .woocommerce-loop-product__title {
+      background-color: #0abafe;
+      border-top: 0.25rem solid #ed379b; }
+    .product-menu .savory-items-list .woocommerce ul.products li.product .woocommerce-loop-product__link .price {
+      background-color: #0abafe; }
+  .product-menu .savory-items-list .add_to_cart_button {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem 2rem;
+    background-color: #f8ff00;
+    box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    text-decoration: none;
+    color: #ed379b;
+    text-shadow: 0.1rem 0.1rem 0.175rem rgba(0, 0, 0, 0.2);
+    transition: all 0.5s; }
+    .product-menu .savory-items-list .add_to_cart_button:hover {
+      background-color: #ed379b;
+      color: #f8ff00; }
 
 .menu-title-container {
   background-color: #3c3c3c;
@@ -805,7 +851,6 @@ Files inside this folder can contain specific element styles and layout.
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    background-color: #ed379b;
     width: 100%;
     max-width: 15.625rem;
     margin: 1rem; }
@@ -829,7 +874,6 @@ Files inside this folder can contain specific element styles and layout.
       background-color: white;
       width: 100%; }
       .woocommerce ul.products li.product .woocommerce-loop-product__link img {
-        border: 0.75rem solid #ed379b;
         border-radius: 50%;
         box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
         width: 12rem;
@@ -839,32 +883,15 @@ Files inside this folder can contain specific element styles and layout.
         width: 100%;
         text-align: center;
         text-transform: uppercase;
-        background-color: #ed379b;
         margin: 0;
         padding-top: 1.25rem;
-        border-top: 0.5rem solid #3ee524;
         text-shadow: 0.1rem 0.175rem 0.175rem rgba(0, 0, 0, 0.2); }
       .woocommerce ul.products li.product .woocommerce-loop-product__link .price {
         width: 100%;
         margin: 0;
         padding-top: 1rem;
         text-align: center;
-        background-color: #ed379b;
         text-shadow: 0.1rem 0.175rem 0.175rem rgba(0, 0, 0, 0.2); }
-    .woocommerce ul.products li.product .add_to_cart_button {
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      padding: 0.25rem 2rem;
-      background-color: #f8ff00;
-      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
-      border-radius: 2rem;
-      text-decoration: none;
-      color: #0abafe;
-      text-shadow: 0.1rem 0.1rem 0.175rem rgba(0, 0, 0, 0.2);
-      transition: all 0.5s; }
-      .woocommerce ul.products li.product .add_to_cart_button:hover {
-        background-color: #0abafe;
-        color: #f8ff00; }
 
 .contact-form {
   max-width: 1920px;

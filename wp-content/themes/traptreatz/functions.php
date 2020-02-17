@@ -30,23 +30,15 @@ function traptreatz_add_woocommerce_support() {
 add_action( 'after_setup_theme', 'traptreatz_add_woocommerce_support' );
 
 /*
- * Make changes to the archive-product.php page in the theme
- * 
- * */
-// Remove breadcrumb
-remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
-// Remove menu header result number
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
-// Add additional WooCommerce opening tag for background image
-add_Action( 'woocommerce_before_main_content', 'traptreatz_open_page_container' );
-function traptreatz_open_page_container() {
-  echo '<div class="menu-content-background" style="background-image: url(' . get_theme_file_uri('/images/brick-wall_small.jpg') . ');">';
-}
-// Add description to product listing
-// add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt' );
-// Add additional WooCommerce closing tag for background image
-add_Action( 'woocommerce_after_main_content', 'traptreatz_close_page_container' );
-function traptreatz_close_page_container() {
-  echo '</div>';
-}
+ * Change 'Selected Options' text on variable product button to 'Choose Flavors'
+ *
+ **/
+add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
+	global $product;
+	if ( $product->is_type( 'variable' ) ) {
+		$text = $product->is_purchasable() ? __( 'Choose Flavor', 'woocommerce' ) : __( 'Read more', 'woocommerce' );
+	}
+	return $text;
+}, 10 );
+
 ?>

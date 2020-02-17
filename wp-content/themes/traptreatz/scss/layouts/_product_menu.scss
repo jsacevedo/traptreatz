@@ -12,6 +12,84 @@
     max-width: 1920px;
     margin: $center;
   }
+
+  .sweet-items-list {
+    .woocommerce ul.products li.product {
+      background-color: $violet-red;
+  
+      .woocommerce-loop-product__link {
+        img {
+          @include border-default(0.750rem, solid, $violet-red);
+        }
+  
+        .woocommerce-loop-product__title {
+          background-color: $violet-red;
+          @include border(top, 0.25rem, solid, $lima);
+        }
+  
+        .price {
+          background-color: $violet-red;
+        }
+      }
+    }
+
+    .add_to_cart_button {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      padding: 0.25rem 2rem;
+      background-color: $yellow;
+      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.2);
+      border-radius: 2rem;
+      text-decoration: none;
+      color: $dodger-blue;
+      text-shadow: 0.1rem 0.1rem 0.175rem rgba(0,0,0,0.2);
+      transition: all 0.5s;
+  
+      &:hover {
+        background-color: $dodger-blue;
+        color: $yellow;
+      }
+    }
+  }
+
+  .savory-items-list {
+    .woocommerce ul.products li.product {
+      background-color: $dodger-blue;
+  
+      .woocommerce-loop-product__link {
+        img {
+          @include border-default(0.750rem, solid, $dodger-blue);
+        }
+  
+        .woocommerce-loop-product__title {
+          background-color: $dodger-blue;
+          @include border(top, 0.25rem, solid, $violet-red);
+        }
+  
+        .price {
+          background-color: $dodger-blue;
+        }
+      }
+    }
+
+    .add_to_cart_button {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      padding: 0.25rem 2rem;
+      background-color: $yellow;
+      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.2);
+      border-radius: 2rem;
+      text-decoration: none;
+      color: $violet-red;
+      text-shadow: 0.1rem 0.1rem 0.175rem rgba(0,0,0,0.2);
+      transition: all 0.5s;
+  
+      &:hover {
+        background-color: $violet-red;
+        color: $yellow;
+      }
+    }
+  }
 }
 
 .menu-title-container {
@@ -65,7 +143,6 @@
     @include flex-flow(column, nowrap);
     @include align-items(center);
     @include flex-child(0, 0, auto);
-    background-color: $violet-red;
     width: 100%;
     max-width: 15.625rem;
     margin: 1rem;
@@ -80,7 +157,6 @@
       width: 100%;
 
       img {
-        @include border-default(0.750rem, solid, $violet-red);
         border-radius: 50%;
         box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.2);
         width: 12rem;
@@ -92,10 +168,8 @@
         width: 100%;
         text-align: center;
         text-transform: uppercase;
-        background-color: $violet-red;
         margin: 0;
         padding-top: 1.25rem;
-        @include border(top, 0.5rem, solid, $lima);
         text-shadow: 0.1rem 0.175rem 0.175rem rgba(0,0,0,0.2);
       }
 
@@ -104,26 +178,7 @@
         margin: 0;
         padding-top: 1rem;
         text-align: center;
-        background-color: $violet-red;
         text-shadow: 0.1rem 0.175rem 0.175rem rgba(0,0,0,0.2);
-      }
-    }
-
-    .add_to_cart_button {
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      padding: 0.25rem 2rem;
-      background-color: $yellow;
-      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.2);
-      border-radius: 2rem;
-      text-decoration: none;
-      color: $dodger-blue;
-      text-shadow: 0.1rem 0.1rem 0.175rem rgba(0,0,0,0.2);
-      transition: all 0.5s;
-
-      &:hover {
-        background-color: $dodger-blue;
-        color: $yellow;
       }
     }
   }
