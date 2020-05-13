@@ -1,12 +1,12 @@
 /* Import custom font files*/
 @font-face {
   font-family: 'Chalkboard SE';
-  src: url(http://localhost:3000/trap-treatz/wp-content/themes/traptreatz/scss/fonts/copyfonts.com_chalkboard-se-regular.ttf);
+  src: url(http://localhost/trap-treatz/wp-content/themes/traptreatz/scss/fonts/copyfonts.com_chalkboard-se-regular.ttf);
 }
 
 @font-face {
   font-family: 'Philly Sans';
-  src: url(http://localhost:3000/trap-treatz/wp-content/themes/traptreatz/scss/fonts/PhillySans.otf);
+  src: url(http://localhost/trap-treatz/wp-content/themes/traptreatz/scss/fonts/PhillySans.otf);
 }
 
 // Globally set font to 'Chalkboard SE'
@@ -44,8 +44,27 @@ body {
   font-family: 'Philly Sans', serif;
 }
 
-.woocommerce ul.products li.product a.add_to_cart_button {
-  font-family: 'Philly Sans', serif;
+.woocommerce ul.products li.product {
+  a.add_to_cart_button, a.added_to_cart {
+    font-family: 'Philly Sans', serif;
+  }
+}
+
+.site-main .product.type-product {
+  & > .summary.entry-summary {
+    & > h1.product_title.entry-title {
+      font-family: 'Philly Sans', serif;
+    }
+  }
+}
+
+.product-quantity-container {
+  form.cart {
+    button[type=submit] {
+      font-family: 'Philly Sans', serif;
+      font-size: 1.5rem;
+    }
+  }
 }
 
 // Font Sizes
@@ -112,7 +131,26 @@ body {
   font-size: 1.25rem;
 }
 
-.woocommerce ul.products li.product a.add_to_cart_button {
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
+.woocommerce ul.products li.product {
+  a.add_to_cart_button, a.added_to_cart {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.site-main .product.type-product {
+  & > .summary.entry-summary {
+    & > h1.product_title.entry-title {
+      font-size: 4rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
+
+form.cart {
+  .quantity {
+    input[type=number] {
+      font-size: 2.5rem;
+    }
+  }
 }

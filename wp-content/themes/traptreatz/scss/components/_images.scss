@@ -1,24 +1,23 @@
-// Header logo styles
-img.logo {
-  margin: $center;
-  width: 100%;
-  max-width: 15rem;
-  height: auto;
-  align-self: start;
-}
-
 // Header icon Styles
 img.header-icon {
   height: 2rem;
-}
-
-#user-icon, #bag-icon {
-  justify-self: end;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 #user-icon, #bag-icon, #search-icon {
-  margin: 1.5rem 0 0 0;
+  @include justify-self(center);
+  @include align-self-grid(center);
+}
+
+#user-icon, #bag-icon, #search-icon {
+  display: block;
+  margin: 0;
   position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
 
   &:hover {
     &:after {
@@ -28,34 +27,46 @@ img.header-icon {
       height: 0;
       width: 0;
       left: 50%;
+      bottom: -0.55rem;
       margin-left: -1rem;
       @include border('left', 1rem, solid, transparent);
       @include border('right', 1rem, solid, transparent);
-      @include border('bottom', 1rem, solid, $violet-red);
+      @include border('bottom', 1rem, solid, $mine-shaft);
     }
   }
 }
 
-@media only screen and (min-width: $header-breakpoint) {
-  img.logo {
-    margin: 0;
-    height: auto;
-    width: 17rem;
-    order: 1;
-  }
+#user-icon {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / span 1;
+}
 
+#search-icon {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+}
+
+#bag-icon {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+  grid-column: 5 / span 1;
+}
+
+@media only screen and (min-width: $header-breakpoint) {
   #user-icon {
     order: 3;
-    padding: 0 1rem;
+    padding: 0.75rem 1rem;
   }
 
   #search-icon {
     order: 4;
-    padding: 0 1rem;
+    padding: 0.75rem 1rem;
   }
 
   #bag-icon {
     order: 5;
-    padding: 0 1rem;
+    padding: 0.75rem 1rem;
   }
 }

@@ -11,12 +11,18 @@ $max-width: 1920px;
 $max-height: 1080px;
 
 // Breakpoint variables
-$header-breakpoint: 1125px;
+$mobile-breakpoint: 500px;
+$header-breakpoint: 820px;
 $main-page-menu-breakpoint-tablet: 820px;
 $main-page-menu-breakpoint-desktop: 1100px;
-$main-page-our-story-breakpoint: 800px;
+$main-page-landing-breakpoint-tablet: 600px;
+$main-page-our-story-breakpoint: 900px;
 $contact-breakpoint-tablet: 750px;
 $contact-breakpoint-desktop: 900px;
+$item-breakpoint-desktop: 1000px;
+$login-breakpoint-tablet: 450px;
+$login-breakpoint-desktop: 925px;
+$cart-breakpoint-desktop: 500px;
 
 // Default centering
 $center: 0 auto;

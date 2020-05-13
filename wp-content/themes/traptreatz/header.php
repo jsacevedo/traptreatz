@@ -8,6 +8,9 @@
 
   <body <?php body_class(); ?>>
     <header class="site-header">
+      <div class="site-header-logo-container">
+        <img class="header-logo-image" src="<?php echo get_stylesheet_directory_uri(); ?>/images/traptreatz-logo.png">
+      </div>
       <div class="site-header-container">
         <span class="navbar-open" id="side-navbar-open">
           <svg class="svg-icon" viewBox="0 0 20 20">
@@ -19,7 +22,7 @@
           </svg>
         </span>
         <a id="search-icon" href="#"><img class="header-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/search.png"></a>
-        <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="Traptreatz Logo">
+        <!--<img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="Traptreatz Logo">-->
         <nav class="main-header-navigation">
           <?php
             wp_nav_menu(array(
@@ -28,7 +31,14 @@
           ?>
         </nav>
         <a id="user-icon" href="<?php echo site_url('/my-account'); ?>"><img class="header-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/man-user.png"></a>
-        <a id="bag-icon" href="#"><img class="header-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-bag.png"></a>
+        <?php global $woocommerce; ?>
+
+        <a class="cart-contents" id="bag-icon" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your bag', 'woothemes'); ?>">
+          <img class="header-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/shopping-bag.png">
+          <div class="bag-total">
+            <?php echo sprintf($woocommerce->cart->cart_contents_count);?>
+          </div>
+        </a>
         
         <!-- Responsive side navigation menu -->
         <div id="side-menu" class="side-nav hide-menu">

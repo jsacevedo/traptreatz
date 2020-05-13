@@ -3,4 +3,71 @@ button {
   border-radius: 1.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
+
+  &.quantity-minus,
+  &.quantity-plus {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    @include flexbox();
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: $violet-red;
+    color: $white;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease-in;
+
+    &:hover {
+      background-color: $lima;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.social-media-icon {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: $lima;
+    color: $white;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease-in;
+
+    &:hover {
+      background-color: $violet-red;
+    }
+  }
+}
+
+.product_cat-sweet {
+  button {
+    &.quantity-minus,
+    &.quantity-plus {
+      background-color: $violet-red;
+    }
+  }  
+}
+
+.product_cat-savory {
+  button {
+    &.quantity-minus,
+    &.quantity-plus {
+      background-color: $dodger-blue;
+    }
+  } 
 }

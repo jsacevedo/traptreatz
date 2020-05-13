@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(inst
 
 /***/ }),
 
+/***/ "./wp-content/themes/traptreatz/js/modules/SmoothScroll.js":
+/*!*****************************************************************!*\
+  !*** ./wp-content/themes/traptreatz/js/modules/SmoothScroll.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar SmoothScroll =\n/*#__PURE__*/\nfunction () {\n  function SmoothScroll() {\n    _classCallCheck(this, SmoothScroll);\n\n    this.menuLink = document.querySelector('.menu-link');\n    this.ourStoryLink = document.querySelector('.our-story-link');\n    this.ourStoryTarget = document.getElementById('our-story');\n    this.menuTarget = document.getElementById('product-menu');\n    this.events();\n  } // Event listeners\n\n\n  _createClass(SmoothScroll, [{\n    key: \"events\",\n    value: function events() {\n      this.ourStoryLink.addEventListener('click', this.scrollToStory.bind(this));\n    }\n  }, {\n    key: \"scrollToStory\",\n    value: function scrollToStory() {\n      console.log('I was clicked');\n      this.ourStoryTarget.scrollIntoView({\n        behavior: \"smooth\",\n        block: \"start\",\n        inline: \"nearest\"\n      });\n      console.log(this.ourStoryTarget);\n    }\n  }]);\n\n  return SmoothScroll;\n}();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (SmoothScroll);\n\n//# sourceURL=webpack:///./wp-content/themes/traptreatz/js/modules/SmoothScroll.js?");
+
+/***/ }),
+
 /***/ "./wp-content/themes/traptreatz/js/scripts.js":
 /*!****************************************************!*\
   !*** ./wp-content/themes/traptreatz/js/scripts.js ***!
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(inst
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_SideMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/SideMenu */ \"./wp-content/themes/traptreatz/js/modules/SideMenu.js\");\n// 3rd party packages from NPM\n// Our modules / classes\n // Instantiate a new object using our modules/classes\n\nvar sideMenu = new _modules_SideMenu__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\n//# sourceURL=webpack:///./wp-content/themes/traptreatz/js/scripts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_SideMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/SideMenu */ \"./wp-content/themes/traptreatz/js/modules/SideMenu.js\");\n/* harmony import */ var _modules_SmoothScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/SmoothScroll */ \"./wp-content/themes/traptreatz/js/modules/SmoothScroll.js\");\n// 3rd party packages from NPM\n// Our modules / classes\n\n // import ClosePopup from './modules/ClosePopup';\n// Instantiate a new object using our modules/classes\n\nvar sideMenu = new _modules_SideMenu__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nvar smoothScroll = new _modules_SmoothScroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"](); // let closePopup = new ClosePopup();\n\n//# sourceURL=webpack:///./wp-content/themes/traptreatz/js/scripts.js?");
 
 /***/ })
 

@@ -1,27 +1,78 @@
 .landing-banner {
-  height: calc(100vh - 5.5rem);
-  max-height: $max-height;
-  background-color: $lima;
   @include border('bottom', 0.250rem, solid, $dodger-blue);
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .landing-banner-container {
   max-width: $max-width;
   height: 100%;
   margin: $center;
+  padding: 2rem 1rem;
+  position: relative;
   @include flexbox();
-  @include flex-flow(column, nowrap);
+  @include flex-direction(column);
+  @include flex-wrap(nowrap);
   @include align-items(center);
   @include justify-content(center);
 
-  .landing-title {
-    width: 500px;
+  .landing-image {
+    position: relative;
+    max-width: 100%;
     height: auto;
   }
 
-  .landing-button {
+  .landing-link {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1rem;
     background-color: $yellow;
     color: $violet-red;
-    margin-top: 2rem;
+    @include transition(all, 0.3s);
+
+    &:visited {
+      background-color: $yellow;
+      color: $violet-red;
+    }
+
+    &:hover {
+      background-color: $dodger-blue;
+      color: $yellow;
+    }
+
+    &:active {
+      background-color: $dodger-blue;
+      color: $yellow;
+    }
+  }
+}
+
+@media only screen and (min-width: $main-page-landing-breakpoint-tablet) {
+  .landing-banner {
+    max-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .landing-banner-container {
+    padding: 0;
+  
+    .landing-link {
+      position: absolute;
+      left: calc(50% + 3.5rem);
+      top: 50%;
+      @include translate(-50%, -50%);
+      margin-top: 2rem;
+      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.2);
+      text-shadow: 0.1rem 0.1rem 0.175rem rgba(0,0,0,0.2);
+    }
   }
 }

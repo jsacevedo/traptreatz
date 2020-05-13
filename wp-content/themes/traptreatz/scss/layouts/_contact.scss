@@ -1,15 +1,89 @@
 .contact-form {
-  max-width: $max-width;
-  margin: $center;
-  background-position: bottom, center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll, fixed;
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  padding-top: 1rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.6);
+  }
+
+  & * {
+    z-index: 10;
+  }
+
+  .contact-title-container {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    @include flexbox();
+    @include justify-content(center);
+    position: relative;
+
+    .green-paint-can-contact {
+      display: block;
+      width: 15%;
+      max-width: 6rem;
+      height: calc(100% - 2rem);
+      left: 20%;
+      top: 50%;
+      -webkit-transform: rotate(160deg) translateY(50%);
+      -ms-transform: rotate(160deg) translateY(50%);
+      transform: rotate(160deg) translateY(50%);
+      position: absolute;
+      z-index: 15;
+    }
+
+    .contact-title {
+      display: block;
+      width: 60%;
+      max-width: 20rem;
+      height: calc(100% - 2rem);
+    }
+  }
 
   form {
     @include flexbox();
-    @include flex-flow(column, nowrap);
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
     @include align-items(center);
+    position: relative;
+    max-width: $max-width;
+    margin: $center;
+    padding: 1rem 0 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      @include translateX(-50%);
+      width: 100%;
+      max-width: $max-width;
+      height: 100%;
+      background-image: url('../../themes/traptreatz/images/yellow-orbs.png');
+      background-size: contain;
+      background-repeat: repeat-x;
+      background-position: bottom center;
+    }
+
+    & * {
+      z-index: 10;
+    }
+
+    .contact-image {
+      width: 100%;
+      max-width: 31.25rem;
+      height: auto;
+    }
   }
 
   div {
@@ -28,7 +102,7 @@
       line-height: 1.5rem;
       padding: 0.375rem;
       background-color: $mine-shaft;
-      width: calc(100% - 5rem);
+      width: calc(100% - 4rem);
       margin: 0 2rem;
     }
   }
@@ -36,9 +110,32 @@
 
 @media only screen and (min-width: $contact-breakpoint-tablet) {
   .contact-form {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .contact-title-container {
+      position: relative;
+      margin: 2rem 0;
+  
+      .green-paint-can-contact {
+        left: calc(50% - 15rem);
+        top: 50%;
+        -webkit-transform: rotate(160deg) translate(-50%, 50%);
+        -ms-transform: rotate(160deg) translate(-50%, 50%);
+        transform: rotate(160deg) translate(-50%, 50%);
+        position: absolute;
+      }
+  
+      .contact-title-spacer {
+        display: none;
+      }
+    }
+
     form {
-      @include flex-flow(row, wrap);
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
       @include align-items(center);
+      @include justify-content(center);
 
       div {
         width: 50%;
@@ -49,7 +146,7 @@
         }
     
         & > input[type="text"], input[type="tel"], input[type="email"], textarea {
-          width: calc(100% - 3rem);
+          width: calc(100% - 2rem);
           margin: 0 1rem;
         }
       }
@@ -65,45 +162,76 @@
   .contact-form {
     form {
       @include display-grid();
+      -ms-grid-columns: 1fr 3rem 1fr;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 3rem;
       grid-template-areas:
         "firstname lastname"
         "phone email"
-        ". message";
+        "image message";
 
       div {
-        width: 17.5rem;
+        width: 20rem;
 
         & > label {
+          width: 20rem;
           margin: 0.375rem 0;
         }
     
-        & > input[type="text"], input[type="tel"], input[type="email"], textarea {
+        & > input[type="text"], input[type="tel"], input[type="email"] {
           margin: 0;
-          width: calc(100% - 1rem);
+          width: 20rem;
+        }
+
+        & > textarea {
+          margin: 0;
+          min-width: 30rem;
+          max-width: 35rem;
         }
       }
 
       .field-first-name {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
         grid-area: firstname;
+        -ms-grid-column-align: end;
+        justify-self: end;
       }
 
-      .field-lastname {
+      .field-last-name {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
         grid-area: lastname;
       }
 
       .field-phone {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
         grid-area: phone;
+        -ms-grid-column-align: end;
+        justify-self: end;
       }
 
       .field-email {
+        -ms-grid-row: 2;
+        -ms-grid-column: 3;
         grid-area: email;
       }
 
+      .contact-image {
+        justify-self: end;
+        align-self: end;
+        grid-area: image;
+      }
+
       .contact-message {
-        width: 100%;
+        align-self: start;
+        -ms-grid-row: 3;
+        -ms-grid-column: 3;
         grid-area: message;
+        margin-top: 1rem;
+        margin-left: -5rem;
+        z-index: 15;
       }
     }
   }

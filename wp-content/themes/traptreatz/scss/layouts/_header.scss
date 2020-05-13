@@ -1,19 +1,45 @@
 .site-header {
-  height: 5rem;
   background-color: $dodger-blue;
-  @include border('bottom', 0.250rem, solid, $violet-red);
+}
+
+.site-header-logo-container {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  background-color: $lima;
+
+  .header-logo-image {
+    width: 90%;
+    max-width: 20rem;
+    height: auto;
+    padding: 0.25rem 0;
+  }
 }
 
 .site-header-container {
   position: relative;
   @include display-grid();
-  grid-template-columns: 2.5rem 2.5rem 1fr 2.5rem 2.5rem;
+  -ms-grid-columns: 2.5rem 0.75rem 1fr 0.75rem 2.5rem 0.75rem 2.5rem 0.75rem 2.5rem;
+  grid-template-columns: 2.5rem 1fr 2.5rem 2.5rem 2.5rem;
   grid-gap: 0.75rem;
-  align-items: start;
+  justify-items: center;
+  @include align-items(center);
   max-width: $max-width;
   margin: $center;
-  padding: 0 1rem;
-  height: 5rem;
+  padding: 1rem;
+
+  & > .cart-contents {
+    text-decoration: none;
+    color: $white;
+    position: relative;
+
+    & > .bag-total {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0.75rem;
+    }
+  }
 }
 
 .main-header-navigation {
@@ -22,7 +48,6 @@
 
 .navbar-open {
   cursor: pointer;
-  margin-top: 1.5rem;
 
   .svg-icon {
     width: 2rem;
@@ -37,7 +62,8 @@
 .side-nav {
   position: fixed;
   @include flexbox();
-  @include flex-flow(column, nowrap);
+  @include flex-direction(column);
+  @include flex-wrap(nowrap);
   @include justify-content(flex-start);
   top: 0;
   left: 0;
@@ -69,7 +95,8 @@
     margin: 0;
     padding: 0 1rem 0 1rem;
     @include flexbox();
-    @include flex-flow(column, nowrap);
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
 
     & > li {
       height: 3.5rem;
@@ -107,6 +134,8 @@
   .site-header-container {
     @include flexbox();
     @include justify-content(center);
+    @include align-items(center);
+    padding: 0;
     
     .navbar-open {
       display: none;
@@ -114,6 +143,12 @@
 
     .side-nav {
       display: none;
+    }
+
+    & > .cart-contents {
+      & > .bag-total {
+        top: 1.4rem;
+      }
     }
   }
 
@@ -126,36 +161,27 @@
       margin: 0;
       padding: 0;
       @include flexbox();
-      @include flex-flow(row, nowrap);
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
       @include justify-content(space-between);
-      @include align-items(stretch);
+      @include align-items(center);
 
       & > li {
         @include flexbox();
         @include align-items(stretch);
-        height: 5rem;
 
         a {
           color: $white;
           text-decoration: none;
           text-transform: uppercase;
-          padding: 0 2rem 0 2rem;
+          padding: 1.75rem 2rem;
           @include flexbox();
           @include align-items(center);
+          @include transition(all, 0.3s);
 
           &:hover {
             background-color: $mine-shaft;
-            color: $lima;
-            transition: 0.5s;
           }
-        }
-      }
-
-      .current_page_item {
-        background-color: $mine-shaft;
-
-        a {
-          color: $lima;
         }
       }
     } 
