@@ -326,6 +326,17 @@
         & > .checkout-item-name-wrapper {
           text-align: left;
           margin-left: 2rem;
+
+          & > .checkout-item-name-wrapper {
+            text-align: center;
+            margin: 0;
+    
+            .checkout-cart-item-name {
+              margin: 0 0 1rem 0;
+              color: $white;
+              font-size: 1.1rem;
+            }
+          }
         }
       }
     }

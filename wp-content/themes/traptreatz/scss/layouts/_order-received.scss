@@ -1,0 +1,106 @@
+.woocommerce-order-received {
+  & > .woocommerce {
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("images/brick-wall_small.jpg");
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  .woocommerce-order {
+    max-width: $checkout-max-width;
+    padding: 1rem;
+    margin: 0 auto;
+
+    .woocommerce-notice {
+      margin-top: 0;
+    }
+
+    .woocommerce-order-overview {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0;
+
+      & li {
+        @include flexbox();
+        @include flex-direction(column);
+        @include align-items(start);
+        margin-bottom: 1rem;
+        font-family: 'Philly Sans', serif;
+        font-size: 1.5rem;
+
+        & strong {
+          font-family: 'Chalkboard SE', sans-serif;
+          font-size: 1rem;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .woocommerce-order-details__title {
+      font-family: 'Philly Sans', serif;
+      font-weight: normal;
+      margin: 1rem 0 0 0;
+    }
+
+    .custom-details {
+      margin-bottom: 1rem;
+    }
+
+    .checkout-detail-row,
+    .woocommerce-table__product-name {
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      @include justify-content(space-between);
+      @include align-items(center);
+      width: 100%;
+    }
+
+    .woocommerce-table__product-total {
+      text-align: right;
+      width: 100%;
+    }
+
+    .custom-details-footer {
+      @include flexbox();
+      @include flex-direction(column);
+      @include flex-wrap(nowrap);
+      @include align-items(flex-start);
+    }
+
+    .woocommerce-column__title {
+      font-family: 'Philly Sans', serif;
+      font-weight: normal;
+      text-transform: capitalize;
+      margin: 1rem 0 0 0;
+    }
+  }
+}
+
+@media only screen and (min-width: $mobile-breakpoint) {
+  .woocommerce-order-received {
+    .woocommerce-order {
+      .woocommerce-table__product-name,
+      .woocommerce-table__product-total {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $item-breakpoint-desktop) {
+  .woocommerce-order-received {
+    & > .woocommerce {
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
